@@ -25,12 +25,13 @@
  - This is illegal to use hacked account! Add only the accounts you own.
  - You MUST have the right the create team drive into your account else it won't work.
  - I am not responsible of any google restrictions into your account or the subscriptio (the account may be suspendent by google due to abuse)
-<br />
+
 #### Add an account
 - First setp : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on [CREATE PROJECT]()
 - Name it as you want and click on [Create]()
 - [Select your project](), go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.
+- 
 
 ## Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
