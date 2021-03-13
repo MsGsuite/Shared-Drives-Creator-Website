@@ -27,7 +27,10 @@
 
 
 ## Deploy the website 
-<br />
+* Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
+* Set-up your custom subdomain, click on "Save" and "Continue with free"
+* Then click on "Workers" and then "Create a worker"<br />
+* Select the code under "Script", delete it and paste your
 <br />
 
 
