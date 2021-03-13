@@ -32,7 +32,10 @@
 - Name it as you want and click on [Create]()
 - [Select your project](), go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.
 - Go to the [OAuth Consent Screen](https://console.cloud.google.com/apis/credentials/consent) and select "External" and click on [Create]()
-- Fullfill all required informations and click on "Save and Continue" 3 times (the "Scopes" and "Test users" parts do not require any inputs)
+- Fulfill all required informations and click on "Save and Continue" 3 times (the "Scopes" and "Test users" parts do not require any inputs)
+- Go the the [Cretentials](https://console.cloud.google.com/apis/credentials) tab and click on "Create Credentials" and "OAuth client ID" and name it as you want
+- Under "Authorized JavaScript origins" click on "ADD URL" and add `https://developers.google.com`
+- Under "Authorized redirect URIs" click on "ADD URL" and add `https://developers.google.com/oauthplayground`
 
 
 ## Deploy the website 
