@@ -1,15 +1,14 @@
 <h1 align="center">🔥 Google Shared Drives Creator🔥</h1> 
 
-> ## A simple script to automate the google Shared Drives creation.
+<!-- > ## A simple script to automate the google Shared Drives creation. -->
 [![Create-Google-Shared-Drive](https://i.imgur.com/GB6clwg.png)](https://github.com/MsGsuite/MsGsuite)
 
 ## Features
-- 🔭 I’m currently working on - ❔❔❔❔
-- 🌱 I’m currently learning - ❔❔❔❔
-- 👯 
-- 💬 Ask me about - ❔❔❔❔
-- 🥅 2020 Goal - ❔❔❔❔
-- ⚡ Fun fact - ❔❔❔❔
+- 🔭 Create Shared Drive from your google account without using it
+- 🛠 100% customizable 
+- 🖼 User-friendly UI with random background
+- ⚙️ Add multiple accounts
+- 🔐 Protected thanks to H-captcha 
 - 
 [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)
 ## Connect with me:
