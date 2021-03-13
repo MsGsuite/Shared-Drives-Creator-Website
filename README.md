@@ -26,7 +26,7 @@
 <br />
 <!-- Optional if you have blogs -->
 ## Credits :
-https://github.com/ParveenBhadooOfficial/Create-Google-Shared-Drive
+* [Parveen Bhadoo](https://github.com/ParveenBhadooOfficial/Create-Google-Shared-Drive)
 
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
