@@ -21,6 +21,10 @@
 <!-- [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)-->
 
 ## How to add an account
+### Warnings
+ - This is illegal to use hacked account! Add only the accounts you own.
+ - You MUST have the right the create team drive into you account else it won't work.
+ - I am not responsible of any google restrictions into your account or the subscriptio (the account may be suspendent by google due to abuse)
 <br />
 <br />
 <br />
