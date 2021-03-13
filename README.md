@@ -21,8 +21,8 @@
 <!-- [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)-->
 
 ## Connect with me:
+[<img align="left" alt="Website Logo" width="22px" src="https://i.imgur.com/CwaL5jM.png" />][website]
 [<img align="left" alt="Telegram Logo" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" />][telegram]
-[<img align="left" alt="codeSTACKr | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
 [<img align="left" alt="codeSTACKr | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 <br />
 <!-- Optional if you have blogs -->
@@ -31,6 +31,6 @@
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
 <!-- This section you create this variables that are used above -->
+[website]: https://td.msgsuite.workers.dev
 [telegram]: https://t.me/MsGsuite
-[twitter]: https://twitter.com/indrajeet_nikam
 [linkedin]: https://www.linkedin.com/in/indrajeet-nikam-3737a8101/
