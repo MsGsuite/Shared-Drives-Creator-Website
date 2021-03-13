@@ -31,8 +31,11 @@
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on [CREATE PROJECT]()
 - Name it as you want and click on [Create]()
 - [Select your project](), go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.
+- Go to the [OAuth Consent Screen](https://console.cloud.google.com/apis/credentials/consent) and select "External" and click on [Create]()
 - 
 
+
+<br />
 ## Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
 * [Set-up your custom subdomain](https://i.imgur.com/5g6MWG7.png), click on "Save" and "[Continue with free](https://i.imgur.com/pFR63in.png)"
