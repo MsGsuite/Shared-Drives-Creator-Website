@@ -20,22 +20,24 @@
 
 <!-- [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)-->
 
-# How to add an account
+## How to add an account
 #### ⚠️ Warnings
  - This is illegal to use hacked account! Add only the accounts you own.
  - You MUST have the right the create team drive into your account else it won't work.
  - I am not responsible of any google restrictions into your account or the subscriptio (the account may be suspendent by google due to abuse)
 <br />
-<br />
-<br />
-
+#### Add an account
+- First setp : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
+- Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on [CREATE PROJECT]()
+- Name it as you want and click on [Create]()
+- [Select your project](), go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.
 
 ## Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
 * [Set-up your custom subdomain](https://i.imgur.com/5g6MWG7.png), click on "Save" and "[Continue with free](https://i.imgur.com/pFR63in.png)"
 * Then click on "Workers" and then "[Create a worker](https://i.imgur.com/8VExHx2.png)"<br />
 * Select the code under "Script", delete it and [paste your code](https://i.imgur.com/q2P8Xt5.png)
-* Click on "Save and deploy" and you team drive generator is ready to [go](https://td.msgsuite.workers.dev) !
+* Click on "Save and deploy" and your team drive generator is ready to [go](https://td.msgsuite.workers.dev) !
 <br />
 
 
