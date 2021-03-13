@@ -1,4 +1,4 @@
-<h1 align="center">🔥 Google Shared Drives Creator🔥<br></h1> 
+<h1 align="center">🔥 Google Shared Drives Creator 🔥<br></h1> 
 
 <br />
 
@@ -20,7 +20,7 @@
 
 <!-- [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)-->
 
-## Connect with me:
+## Follow us:
 [<img align="left" alt="Website Logo" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
 [<img align="left" alt="Telegram Logo" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" />][telegram]
 <br />
