@@ -28,10 +28,10 @@
 
 ## Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
-* Set-up your custom subdomain, click on "Save" and "Continue with free"
-* Then click on "Workers" and then "Create a worker"<br />
-* Select the code under "Script", delete it and paste your code
-* Click on "Save and deploy" and you team drive generator is ready to go !
+* [Set-up your custom subdomain](https://i.imgur.com/5g6MWG7.png), click on "Save" and "[Continue with free](https://i.imgur.com/pFR63in.png)"
+* Then click on "Workers" and then "[Create a worker](https://i.imgur.com/8VExHx2.png)"<br />
+* Select the code under "Script", delete it and [paste your code](https://i.imgur.com/q2P8Xt5.png)
+* Click on "Save and deploy" and you team drive generator is ready to [go](https://td.msgsuite.workers.dev) !
 <br />
 
 
