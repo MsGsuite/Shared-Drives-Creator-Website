@@ -17,8 +17,15 @@
 - 📊 Add statistics
 
 <br />
+<br />
 
 <!-- [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)-->
+
+## How to add an account
+
+
+
+
 
 ## Follow us:
 [<img align="left" alt="Website Logo" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
