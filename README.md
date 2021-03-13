@@ -23,6 +23,7 @@
 ## Follow us:
 [<img align="left" alt="Website Logo" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
 [<img align="left" alt="Telegram Logo" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" />][telegram]
+[<img align="left" alt="Telegram Logo" width="22px" src="https://www.searchpng.com/wp-content/uploads/2019/02/Message-Chat-Icon-PNG-Image-1024x941.png" />][telegramchat]
 <br />
 <!-- Optional if you have blogs -->
 ## Credits :
@@ -33,3 +34,4 @@
 <!-- This section you create this variables that are used above -->
 [website]: https://td.msgsuite.workers.dev
 [telegram]: https://t.me/MsGsuite
+[telegramchat]: https://t.me/MsGsuiteChat
