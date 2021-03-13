@@ -37,7 +37,10 @@
 - Under "Authorized redirect URIs" click on "ADD URL" and add `https://developers.google.com/oauthplayground` then click on "Create"
 - Open a new tab and go to the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials"
 - Copy-paste your client ID and client secret from the previous step and press the close button.
-- Scroll in the left list till "Drive API v3", select it, click on "[https://www.googleapis.com/auth/drive]" and "authorize API"
+- Scroll down the list on the left to "Drive API v3", select it, click on "[https://www.googleapis.com/auth/drive]" and "authorize API"
+- Select your account and click on "Allow", then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and copy your refresh token
+- .
+
 
 
 ## Deploy the website 
