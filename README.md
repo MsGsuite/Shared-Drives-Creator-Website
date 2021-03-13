@@ -28,14 +28,14 @@
 
 #### Add an account
 - First setp : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
-- Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT"
-- Name it as you want and click on [Create]()
+- Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"
 - Select your project, go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.
 - Go to the [OAuth Consent Screen](https://console.cloud.google.com/apis/credentials/consent) and select "External" and click on "Create"
 - Fulfill all required informations and click on "Save and Continue" 3 times (the "Scopes" and "Test users" parts do not require any inputs)
 - Go the the [Cretentials](https://console.cloud.google.com/apis/credentials) tab, click on "Create Credentials" then "OAuth client ID", select "Web application" and name it as you want
 - Under "Authorized JavaScript origins" click on "ADD URL" and add `https://developers.google.com`
 - Under "Authorized redirect URIs" click on "ADD URL" and add `https://developers.google.com/oauthplayground` then click on "Create"
+- Open a new tab and go to the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials"
 
 
 ## Deploy the website 
