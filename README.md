@@ -27,6 +27,7 @@
  - I am not responsible of any google restrictions into your account or the subscriptio (the account may be suspendent by google due to abuse)
 
 #### Add an account
+Click on the 🖼 to get the associated image.
 - First setp : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"  [🖼](https://i.imgur.com/Hh8gUSp.png) & [🖼](https://i.imgur.com/xYZjEOt.png)
 - Select your project [🖼](https://i.imgur.com/hN2uGwQ.png), go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.  
