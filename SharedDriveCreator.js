@@ -420,10 +420,10 @@ var html = `
                 </div>
 
                 <div>
-                    <p class="donate">Donate : 1EAgQUmVRfQ3sUawLANCzeJnXZjfBh6vgd</p>
+                    <p class="donate">Enter Custom Text</p>
                 </div>
                 <div class="status">
-                    <p class="btn statop">Operational : 72</p>
+                    <p class="btn statop">Operational : 4</p>
                     <p class="btn statnw">Non Working : 0</p>
                     <p class="btn statfx">Testing : 0</p>
                 </div>
