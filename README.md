@@ -1,6 +1,7 @@
-<h1 align="center">FolderClone-Telegram-Bot 🔥</h1> 
+<h1 align="center">🔥 Google Shared Drives Creator🔥</h1> 
 
-> ## FolderClone: A project that allows you copy large folders to Shared Drives.
+> ## A simple script to automate the google Shared Drives creation.
+[![Create-Google-Shared-Drive](https://i.imgur.com/GB6clwg.png)](https://github.com/MsGsuite/MsGsuite)
 
 ## Features
 - 🔭 I’m currently working on - ❔❔❔❔
