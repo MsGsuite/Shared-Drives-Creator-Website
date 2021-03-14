@@ -2,7 +2,7 @@ var authConfig = {
     version: "2.0",
     dailyLimit: true, // Whether to limit each mailbox to submit requests only once a day
     client_id: "", // Google Client ID
-    client_secret: "", // Google Client Secret. The refresh token goes to line 598
+    client_secret: "", // Google Client Secret. The refresh token goes to line 597
     domain: "! ", //College name to display
     black_list: [],
 };
