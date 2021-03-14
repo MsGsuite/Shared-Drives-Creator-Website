@@ -40,7 +40,7 @@ Click on the 🖼 to get the associated image.
 - Copy-paste your client ID and client secret from the previous step and press the close button.
 - Scroll down the list on the left to "Drive API v3", select it, click on "[https://www.googleapis.com/auth/drive]" and "authorize API"  [🖼](https://i.imgur.com/OGR1CMu.png)
 - Select your account and click on "Allow", then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and copy your refresh token [🖼](https://i.imgur.com/ThI5f6L.png)
-- Put the client secret, client id and resfresh token into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file.
+- Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 598.
 
 
 
