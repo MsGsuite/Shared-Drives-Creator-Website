@@ -43,7 +43,7 @@ Click on the 🖼 to get the associated image.
 - Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 597.
 
 
-
+<br>
 ## Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
 * [Set-up your custom subdomain](https://i.imgur.com/5g6MWG7.png), click on "Save" and "[Continue with free](https://i.imgur.com/pFR63in.png)"
