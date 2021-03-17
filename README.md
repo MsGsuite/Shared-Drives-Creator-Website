@@ -25,7 +25,7 @@
 #### ⚠️ Warnings
  - This is illegal to use hacked account! Add only the accounts you own.
  - You MUST have the right the create team drive into your account else it won't work.
- - I am not responsible of any google restrictions into your account or the subscription (the account may be suspendent by google due to abuse)
+ - I am not responsible of any google restrictions into your account or the subscription (the account may be suspended by google due to abuse)
 
 #### 📙 Add an account
 [Click me](https://imgur.com/a/0icXBtI)  to get all the pictures 🖼
