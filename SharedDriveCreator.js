@@ -1,14 +1,22 @@
 var authConfig = {
-    version: "2.0",
-    dailyLimit: true, // Whether to limit each mailbox to submit requests only once a day
-    client_id: "", // Google Client ID
-    client_secret: "", // Google Client Secret. The refresh token goes to line 597
-    domain: "! ", //College name to display
-    black_list: [],
+version: "2.0",
+dailyLimit: true, // Whether to limit each mailbox to submit requests only once a day
+client_id: '', // Google Client ID
+client_secret: '', // Google Client Secret
+refresh_token: '', // Refresh token
+domain: "! ", //College name to display
+black_list: [""]
 };
 var gd;
 
 var today;
+
+// Create an account at https://dashboard.hcaptcha.com/signup and fulfill all details
+var hCaptchaConfig = {  
+    secret: '',
+    sitekey: ''
+};
+
 
 var html = `
 <!DOCTYPE html>
@@ -298,10 +306,6 @@ var html = `
 
 <body>
 <header>
-
-<!--------------------------------------------------------------------------->
-<!--THIS IS THE POPUP WINDOWS. YOU CAN DELETE THE CODE IF YOU DON'T WANT IT-->
-<!--------------------------------------------------------------------------->
     <div class="popupwindows">
         <h1 class="popupmaintitle">Before using</h1>
         <p class="warnmessage">
@@ -354,10 +358,6 @@ var html = `
 
 
     </div>
-<!--------------------------------------------------------------------------->
-<!------------------------------END OF THE PUPUP----------------------------->
-<!--------------------------------------------------------------------------->
-
 
     <div class="mainbox">
 
@@ -386,11 +386,10 @@ var html = `
                         <option value="2">02 - Choice 2</option>
                         <option value="3">03 - Choice 3</option>
                         <option value="4">04 - Choice 4e</option>
-
                     </select>
                 </div>
                 <div class="form-group">
-                    <div class="h-captcha" data-sitekey="1b25fe2c-fa04-4ae0-b1b7-61d10597299c" data-theme="dark"></div>
+                    <div class="h-captcha" data-sitekey="your sitekey here" data-theme="dark"></div>
                 </div>
                 <div class="form-check" style="visibility:hidden;">
                     <input type="checkbox" class="form-check-input" id="customTheme" value="" />
@@ -419,7 +418,7 @@ var html = `
                 </div>
 
                 <div>
-                    <p class="donate">Enter Custom Text</p>
+                    <p class="donate">Add the text you want</p>
                 </div>
                 <div class="status">
                     <p class="btn statop">Operational : 4</p>
@@ -434,30 +433,26 @@ var html = `
 </header>
 
 
-<!--------------------------------------------------------------------------->
-<!--Don't change the code bellow or the creation of the team drive will not work-->
-<!-------------------You can of course change the text----------------------->
-<!--------------------------------------------------------------------------->
 
-<div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <div class="d-flex justify-content-center">
-                    <div class="spinner-border" role="status">
-                        <span class="sr-only">⚙️ Creating the Shared Drive<br>Please wait...</span>
+                    <div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only">⚙️ Creating the Shared Drive<br>Please wait...</span>
+                                        </div>
+                                    </div>
+                                    <div clas="loader-txt">
+                                        <p>⚙️ Creating the Shared Drive<br>Please wait...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div clas="loader-txt">
-                    <p>⚙️ Creating the Shared Drive<br>Please wait...</p>
-                </div>
-            </div>
         </div>
     </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </body>
 <script>
@@ -544,7 +539,7 @@ var html = `
 `;
 
 addEventListener("fetch", (event) => {
-    event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest(event.request));
 });
 
 var dailyLimit = [];
@@ -554,265 +549,319 @@ var dailyLimit = [];
  * @param {Request} request
  */
 async function handleRequest(request) {
-    if (authConfig.dailyLimit) {
-        if (!today) today = new Date().getDate();
+  if (authConfig.dailyLimit) {
+    if (!today) today = new Date().getDate();
 
-        // Remove email rate limit every day
-        if (new Date().getDate() != today) {
-            today = new Date().getDate();
-            dailyLimit.length = 0;
-        }
+    // Remove email rate limit every day
+    if (new Date().getDate() != today) {
+      today = new Date().getDate();
+      dailyLimit.length = 0;
     }
+  }
 
-    if (gd == undefined) {
-        gd = new googleDrive(authConfig);
-    }
-    let url = new URL(request.url);
-    let path = url.pathname;
+  if (gd == undefined) {
+    gd = new googleDrive(authConfig);
+  }
+  let url = new URL(request.url);
+  let path = url.pathname;
 
-    switch (path) {
-        case "/teamDriveThemes":
-            let teamDriveThemes = await gd.getTeamDriveThemes();
-            return new Response(JSON.stringify(teamDriveThemes), {
-                status: 200,
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                },
-            });
-        case "/drive":
-            if (request.method === "POST") {
-                const requestBody = await request.json();
-                //验证码
-                if (requestBody.recaptcha.length == 0) {
-                    return new Response("Complete the captcha please", {
-                        status: 400,
-                    });
-                }
-                //团盘多选
-                if (requestBody.channel == 1) {
-                    console.log(234);
-                    //The client secret and the refresh token used here are the one set in the beginning of the file
-                    authConfig.refresh_token =
-                        "REFRESH TOKEN";
-                    authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
-                }
-                if (requestBody.channel == 2) {
-                    console.log(234);
-                    authConfig.client_id =
-                        "CLIENT ID";
-                    authConfig.client_secret = "CLIENT SECRET";
-                    authConfig.refresh_token =
-                        "REFRESH TOKEN";
-                    authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
-                }
-                if (requestBody.channel == 3) {
-                    console.log(234);
-                    authConfig.client_id =
-                        "CLIENT ID";
-                    authConfig.client_secret = "CLIENT SECRET";
-                    authConfig.refresh_token =
-                        "REFRESH TOKEN";
-                    authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
-                }
-                if (requestBody.channel == 4) {
-                    console.log(234);
-                    authConfig.client_id =
-                        "CLIENT ID";
-                    authConfig.client_secret = "CLIENT SECRET";
-                    authConfig.refresh_token =
-                        "REFRESH TOKEN";
-                    authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
-                }
-                if (authConfig.dailyLimit) {
-                    if (dailyLimit.includes(requestBody.emailAddress)) {
-                        return new Response(
-                            "❌ You have reached the maximum number of creations allowed today!",
-                            {
-                                status: 429,
-                            }
-                        );
-                    } else {
-                        dailyLimit.push(requestBody.emailAddress);
-                    }
-                }
-
-                if (authConfig.black_list.includes(requestBody.emailAddress)) {
-                    return new Response("❔ Please fill in all the fields ", {
-                        status: 429,
-                    });
-                }
-
-                try {
-                    let result = await gd.createAndShareTeamDrive(requestBody);
-                    return new Response(
-                        "✅ Your Shared Drive has successfully been created !",
-                        {
-                            status: 200,
-                        }
-                    );
-                } catch (err) {
-                    return new Response(err.toString(), {
-                        status: 500,
-                    });
-                }
-            } else if (request.method === "OPTIONS") {
-                return new Response("", {
-                    status: 200,
-                    headers: {
-                        "Access-Control-Allow-Origin": "*",
-                    },
-                });
-            } else {
-                return new Response("Bad Request", {
+  switch (path) {
+    case "/teamDriveThemes":
+      let teamDriveThemes = await gd.getTeamDriveThemes();
+      return new Response(JSON.stringify(teamDriveThemes), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    case "/drive":
+        if (request.method === "POST") {
+            const requestBody = await request.json();
+            //验证码
+            if (requestBody.recaptcha.length == 0) {
+                return new Response("Complete the captcha please", {
                     status: 400,
                 });
+            }else{
+                //hCaptcha Verification
+                let hc = new hCaptcha(hCaptchaConfig.secret, hCaptchaConfig.sitekey);
+
+                let verificationResponse = await hc.verify(requestBody.recaptcha);
+                if(!verificationResponse.success){
+                	return new Response("Captcha verification: " + verificationResponse["error-codes"] + "\n", {
+                		status: 400,
+                	});
+                }
             }
-        default:
-            return new Response(html, {
-                status: 200,
-                headers: {
-                    "Content-Type": "text/html; charset=utf-8",
-                    "Access-Control-Allow-Origin": "*",
-                },
-            });
-    }
+
+
+            //团盘多选
+
+           if (requestBody.channel == 1) {
+               console.log(234);
+               //The client secret and the refresh token used here are the one set in the beginning of the file
+               authConfig.refresh_token =
+                   "REFRESH TOKEN";
+               authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
+           }
+           if (requestBody.channel == 2) {
+               console.log(234);
+               authConfig.client_id =
+                   "CLIENT ID";
+               authConfig.client_secret = "CLIENT SECRET";
+               authConfig.refresh_token =
+                   "REFRESH TOKEN";
+               authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
+           }
+           if (requestBody.channel == 3) {
+               console.log(234);
+               authConfig.client_id =
+                   "CLIENT ID";
+               authConfig.client_secret = "CLIENT SECRET";
+               authConfig.refresh_token =
+                   "REFRESH TOKEN";
+               authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
+           }
+           if (requestBody.channel == 4) {
+               console.log(234);
+               authConfig.client_id =
+                   "CLIENT ID";
+               authConfig.client_secret = "CLIENT SECRET";
+               authConfig.refresh_token =
+                   "REFRESH TOKEN";
+               authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
+           }
+        if (authConfig.dailyLimit) {
+          if (dailyLimit.includes(requestBody.emailAddress)) {
+            return new Response(
+              "❌ You have reached the maximum number of creations allowed today!",
+              {
+                status: 429,
+              }
+            );
+          } else {
+            dailyLimit.push(requestBody.emailAddress);
+          }
+        }
+
+        if (authConfig.black_list.includes(requestBody.emailAddress)) {
+          return new Response("❔ Please fill in all the fields ", {
+            status: 429,
+          });
+        }
+
+        try {
+          let result = await gd.createAndShareTeamDrive(requestBody);
+          return new Response(
+            "✅ Your Shared Drive has successfully been created !",
+            {
+              status: 200,
+            }
+          );
+        } catch (err) {
+          return new Response(err.toString(), {
+            status: 500,
+          });
+        }
+      } else if (request.method === "OPTIONS") {
+        return new Response("", {
+          status: 200,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      } else {
+        return new Response("Bad Request", {
+          status: 400,
+        });
+      }
+    default:
+      return new Response(html, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+  }
 }
 // https://stackoverflow.com/a/2117523
 function uuidv4() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-        // tslint:disable-next-line:one-variable-per-declaration
-        const r = (Math.random() * 16) | 0,
-            // tslint:disable-next-line:triple-equals
-            v = c == "x" ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-    });
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    // tslint:disable-next-line:one-variable-per-declaration
+    const r = (Math.random() * 16) | 0,
+      // tslint:disable-next-line:triple-equals
+      v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 }
 
 class googleDrive {
-    constructor(authConfig) {
-        this.authConfig = authConfig;
-        this.accessToken();
+  constructor(authConfig) {
+    this.authConfig = authConfig;
+    this.accessToken();
+  }
+
+  async getTeamDriveThemes() {
+    let url = "https://www.googleapis.com/drive/v3/about";
+    let requestOption = await this.requestOption();
+    let params = { fields: "teamDriveThemes" };
+    url += "?" + this.enQuery(params);
+    let response = await fetch(url, requestOption);
+    return await response.json();
+  }
+
+  async createAndShareTeamDrive(requestBody) {
+    // Create team drive
+    console.log("Creating TeamDrive");
+    let url = "https://www.googleapis.com/drive/v3/drives";
+    let requestOption = await this.requestOption(
+      { "Content-Type": "application/json" },
+      "POST"
+    );
+    let params = { requestId: uuidv4() };
+    url += "?" + this.enQuery(params);
+    let post_data = {
+      name: requestBody.teamDriveName,
+    };
+    if (
+      requestBody.teamDriveThemeId &&
+      requestBody.teamDriveThemeId !== "random"
+    ) {
+      post_data.themeId = requestBody.teamDriveThemeId;
+    }
+    requestOption.body = JSON.stringify(post_data);
+    let response = await fetch(url, requestOption);
+    let result = await response.json();
+    const teamDriveId = result.id;
+    console.log("Created TeamDrive ID", teamDriveId);
+
+    // Get created drive user permission ID
+    console.log(`Getting creator permission ID`);
+    url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions`;
+    params = { supportsAllDrives: true };
+    params.fields = "permissions(id,emailAddress)";
+    url += "?" + this.enQuery(params);
+    requestOption = await this.requestOption();
+    response = await fetch(url, requestOption);
+    result = await response.json();
+    const currentUserPermissionID = result.permissions[0].id;
+    console.log(currentUserPermissionID);
+
+    // Share team drive with email address
+    console.log(`Sharing the team drive to ${requestBody.emailAddress}`);
+    url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions`;
+    params = { supportsAllDrives: true };
+    url += "?" + this.enQuery(params);
+    requestOption = await this.requestOption(
+      { "Content-Type": "application/json" },
+      "POST"
+    );
+    post_data = {
+      role: "organizer",
+      type: "user",
+      emailAddress: requestBody.emailAddress,
+    };
+    requestOption.body = JSON.stringify(post_data);
+    response = await fetch(url, requestOption);
+    await response.json();
+
+    // Delete creator from the team drive
+    console.log("Deleting creator from the team drive");
+    url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions/${currentUserPermissionID}`;
+    params = { supportsAllDrives: true };
+    url += "?" + this.enQuery(params);
+    requestOption = await this.requestOption({}, "DELETE");
+    response = await fetch(url, requestOption);
+    return await response.text();
+  }
+
+  async accessToken() {
+    console.log("accessToken");
+    if (
+      this.authConfig.expires == undefined ||
+      this.authConfig.expires < Date.now()
+    ) {
+      const obj = await this.fetchAccessToken();
+      if (obj.access_token != undefined) {
+        this.authConfig.accessToken = obj.access_token;
+        this.authConfig.expires = Date.now() + 3500 * 1000;
+      }
+    }
+    return this.authConfig.accessToken;
+  }
+
+  async fetchAccessToken() {
+    console.log("fetchAccessToken");
+    const url = "https://www.googleapis.com/oauth2/v4/token";
+    const headers = {
+      "Content-Type": "application/x-www-form-urlencoded",
+    };
+    const post_data = {
+      client_id: this.authConfig.client_id,
+      client_secret: this.authConfig.client_secret,
+      refresh_token: this.authConfig.refresh_token,
+      grant_type: "refresh_token",
+    };
+
+    let requestOption = {
+      method: "POST",
+      headers: headers,
+      body: this.enQuery(post_data),
+    };
+
+    const response = await fetch(url, requestOption);
+    return await response.json();
+  }
+
+  async requestOption(headers = {}, method = "GET") {
+    const accessToken = await this.accessToken();
+    headers["authorization"] = "Bearer " + accessToken;
+    return { method: method, headers: headers };
+  }
+
+  enQuery(data) {
+    const ret = [];
+    for (let d in data) {
+      ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
+    }
+    return ret.join("&");
+  }
+}
+
+//hCaptcha Verification Class
+class hCaptcha{
+    constructor(secret, sitekey) {
+        this.secret = secret;
+        this.sitekey = sitekey;
     }
 
-    async getTeamDriveThemes() {
-        let url = "https://www.googleapis.com/drive/v3/about";
-        let requestOption = await this.requestOption();
-        let params = { fields: "teamDriveThemes" };
-        url += "?" + this.enQuery(params);
-        let response = await fetch(url, requestOption);
-        return await response.json();
-    }
+    //Verification function, the result.success flag would be "true" on successful verification
+    async verify(response_token) {
 
-    async createAndShareTeamDrive(requestBody) {
-        // Create team drive
-        console.log("Creating TeamDrive");
-        let url = "https://www.googleapis.com/drive/v3/drives";
-        let requestOption = await this.requestOption(
-            { "Content-Type": "application/json" },
-            "POST"
-        );
-        let params = { requestId: uuidv4() };
-        url += "?" + this.enQuery(params);
+        console.log("Verifying hCaptcha");
+        let url = "https://hcaptcha.com/siteverify";
+
         let post_data = {
-            name: requestBody.teamDriveName,
-        };
-        if (
-            requestBody.teamDriveThemeId &&
-            requestBody.teamDriveThemeId !== "random"
-        ) {
-            post_data.themeId = requestBody.teamDriveThemeId;
-        }
-        requestOption.body = JSON.stringify(post_data);
-        let response = await fetch(url, requestOption);
-        let result = await response.json();
-        const teamDriveId = result.id;
-        console.log("Created TeamDrive ID", teamDriveId);
-
-        // Get created drive user permission ID
-        console.log(`Getting creator permission ID`);
-        url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions`;
-        params = { supportsAllDrives: true };
-        params.fields = "permissions(id,emailAddress)";
-        url += "?" + this.enQuery(params);
-        requestOption = await this.requestOption();
-        response = await fetch(url, requestOption);
-        result = await response.json();
-        const currentUserPermissionID = result.permissions[0].id;
-        console.log(currentUserPermissionID);
-
-        // Share team drive with email address
-        console.log(`Sharing the team drive to ${requestBody.emailAddress}`);
-        url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions`;
-        params = { supportsAllDrives: true };
-        url += "?" + this.enQuery(params);
-        requestOption = await this.requestOption(
-            { "Content-Type": "application/json" },
-            "POST"
-        );
-        post_data = {
-            role: "organizer",
-            type: "user",
-            emailAddress: requestBody.emailAddress,
-        };
-        requestOption.body = JSON.stringify(post_data);
-        response = await fetch(url, requestOption);
-        await response.json();
-
-        // Delete creator from the team drive
-        console.log("Deleting creator from the team drive");
-        url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions/${currentUserPermissionID}`;
-        params = { supportsAllDrives: true };
-        url += "?" + this.enQuery(params);
-        requestOption = await this.requestOption({}, "DELETE");
-        response = await fetch(url, requestOption);
-        return await response.text();
-    }
-
-    async accessToken() {
-        console.log("accessToken");
-        if (
-            this.authConfig.expires == undefined ||
-            this.authConfig.expires < Date.now()
-        ) {
-            const obj = await this.fetchAccessToken();
-            if (obj.access_token != undefined) {
-                this.authConfig.accessToken = obj.access_token;
-                this.authConfig.expires = Date.now() + 3500 * 1000;
-            }
-        }
-        return this.authConfig.accessToken;
-    }
-
-    async fetchAccessToken() {
-        console.log("fetchAccessToken");
-        const url = "https://www.googleapis.com/oauth2/v4/token";
-        const headers = {
-            "Content-Type": "application/x-www-form-urlencoded",
-        };
-        const post_data = {
-            client_id: this.authConfig.client_id,
-            client_secret: this.authConfig.client_secret,
-            refresh_token: this.authConfig.refresh_token,
-            grant_type: "refresh_token",
+            secret: this.secret,
+            response: response_token,
+            sitekey: this.sitekey
         };
 
-        let requestOption = {
-            method: "POST",
-            headers: headers,
+        console.log(this.enQuery(post_data));
+        let response = await fetch(url, {
+            method: 'POST',
             body: this.enQuery(post_data),
-        };
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
 
-        const response = await fetch(url, requestOption);
-        return await response.json();
+        
+        let result = await response.json();        
+        return result; //check for result.success for status of verification
     }
 
-    async requestOption(headers = {}, method = "GET") {
-        const accessToken = await this.accessToken();
-        headers["authorization"] = "Bearer " + accessToken;
-        return { method: method, headers: headers };
-    }
-
+    //Reusing the googleDrive Object to QueryString Method
     enQuery(data) {
         const ret = [];
         for (let d in data) {
