@@ -40,9 +40,12 @@
 - Copy-paste your client ID and client secret from the previous step and press the close button.
 - Scroll down the list on the left to "Drive API v3", select it, click on "[https://www.googleapis.com/auth/drive]" and "authorize API" 
 - Select your account and click on "Allow", then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and copy your refresh token 
-- Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 597.
+- Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 605.
 <br />
-
+# HCaptcha
+- Go to https://dashboard.hcaptcha.com/signup and fulfill all required details
+- Copy your sitekey and paste it in line 17 & 392
+- Go to the settings of your hCaptcha account, copy and paste your secret key to line 16
 
 ## Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
