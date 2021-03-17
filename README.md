@@ -27,7 +27,7 @@
  - I am not responsible of any google restrictions into your account or the subscription (the account may be suspendent by google due to abuse)
 
 #### Add an account
-[Click me to get all the pictures 🖼](https://imgur.com/a/0icXBtI) to get the associated image.
+[Click me](https://imgur.com/a/0icXBtI)  to get all the pictures 🖼
 - First step : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"  
 - Select your project , go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.  
