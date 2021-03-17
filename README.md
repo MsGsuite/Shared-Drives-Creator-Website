@@ -43,7 +43,7 @@
 - Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 605.
 
 
-# HCaptcha
+#### HCaptcha
 - Go to https://dashboard.hcaptcha.com/signup and fulfill all required details
 - Copy your sitekey and paste it in line 17 & 392
 - Go to the settings of your hCaptcha account, copy and paste your secret key to line 16
