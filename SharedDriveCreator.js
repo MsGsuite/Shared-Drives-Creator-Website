@@ -8,8 +8,8 @@ domain: "! ", //College name to display
 black_list: [""]
 };
 var gd;
-
 var today;
+authConfig.domainCount = 4;  //Remplace 4 by the number of different drives you have 
 
 // Create an account at https://dashboard.hcaptcha.com/signup and fulfill all details
 var hCaptchaConfig = {  
@@ -595,9 +595,9 @@ async function handleRequest(request) {
                 }
             }
 
-
-            //团盘多选
-
+	   if (requestBody.channel == 0) {
+		requestBody.channel = getRandomInteger(1,authConfig.domainCount);
+	   }
            if (requestBody.channel == 1) {
                console.log(234);
                //The client secret and the refresh token used here are the one set in the beginning of the file
@@ -869,4 +869,7 @@ class hCaptcha{
         }
         return ret.join("&");
     }
+}
+function getRandomInteger(min, max){
+    return Math.floor(Math.random() * Math.floor(max)) + (min-1);
 }
