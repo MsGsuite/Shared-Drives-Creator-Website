@@ -8,25 +8,26 @@
 <br />
 
 
-## Features
+## 📜 Features
 - 🔭 Create Shared Drive from your google account without using it
 - 🛠 100% customizable 
 - 🖼 User-friendly UI
 - ⚙️ Add multiple accounts
 - 🔐 Protected thanks to H-captcha 
 - 📊 Add statistics
+- 🎲 Randomize choice
 
 <br />
 
 <!-- [![Indrajeet's github stats](https://github-readme-stats.vercel.app/api?username=msgsuite&count_private=true&include_all_commits=true&theme=radical)](https://t.me/msgsuite)-->
 
-## How to add an account
+## 📚 How to add an account
 #### ⚠️ Warnings
  - This is illegal to use hacked account! Add only the accounts you own.
  - You MUST have the right the create team drive into your account else it won't work.
  - I am not responsible of any google restrictions into your account or the subscription (the account may be suspendent by google due to abuse)
 
-#### Add an account
+#### 📙 Add an account
 [Click me](https://imgur.com/a/0icXBtI)  to get all the pictures 🖼
 - First step : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"  
@@ -43,14 +44,14 @@
 - Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 605.
 
 
-#### HCaptcha
+#### 🔒 HCaptcha
 - Go to https://dashboard.hcaptcha.com/signup and fulfill all required details
 - Copy your sitekey and paste it in line 17 & 392
 - Go to the settings of your hCaptcha account, copy and paste your secret key to line 16
 <br />
 
 
-## Deploy the website 
+## ⚙️ Deploy the website 
 * Go to [cloudflare workers](https://workers.cloudflare.com/) and create and confirm your account
 * [Set-up your custom subdomain](https://i.imgur.com/5g6MWG7.png), click on "Save" and "[Continue with free](https://i.imgur.com/pFR63in.png)"
 * Then click on "Workers" and then "[Create a worker](https://i.imgur.com/8VExHx2.png)"<br />
@@ -59,13 +60,13 @@
 <br />
 
 
-## Follow us:
+## 📢 Follow us:
 [<img align="left" alt="Website Logo" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
 [<img align="left" alt="Telegram Logo" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" />][telegram]
 [<img align="left" alt="Telegram Logo" width="22px" src="https://www.searchpng.com/wp-content/uploads/2019/02/Message-Chat-Icon-PNG-Image-1024x941.png" />][telegramchat]
 <br />
 <!-- Optional if you have blogs -->
-## Credits :
+## ❤️ Credits :
 * [Parveen Bhadoo](https://github.com/ParveenBhadooOfficial/Create-Google-Shared-Drive)
 * The admin of [lvyelanshan](https://t.me/lvyelanshan_share)
 * Albert Einstein for the hCaptcha verification
