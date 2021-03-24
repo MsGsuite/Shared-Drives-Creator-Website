@@ -389,7 +389,7 @@ var html = `
                     </select>
                 </div>
                 <div class="form-group">
-                    <div class="h-captcha" data-sitekey="your sitekey here" data-theme="dark"></div>
+                    <div class="h-captcha" data-sitekey="`+ hCaptchaConfig.sitekey +`" data-theme="dark"></div>
                 </div>
                 <div class="form-check" style="visibility:hidden;">
                     <input type="checkbox" class="form-check-input" id="customTheme" value="" />
