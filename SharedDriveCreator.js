@@ -718,10 +718,10 @@ async function handleRequest(request) {
                         requestBody.channel = getRandomInteger(1,authConfig.domainCount);
                     }
 
-                    authConfig.domain = domainConfigs[requestBody.channel].domain;
-                    authConfig.client_id = domainConfigs[requestBody.channel].client_id;
-                    authConfig.client_secret = domainConfigs[requestBody.channel].client_secret;
-                    authConfig.refresh_token = domainConfigs[requestBody.channel].refresh_token;
+                    authConfig.domain = domainConfigs[requestBody.channel-1].domain;
+                    authConfig.client_id = domainConfigs[requestBody.channel-1].client_id;
+                    authConfig.client_secret = domainConfigs[requestBody.channel-1].client_secret;
+                    authConfig.refresh_token = domainConfigs[requestBody.channel-1].refresh_token;
                 
                     //Creating the TD
                     let result = await gd.createAndShareTeamDrive(requestBody);
@@ -1028,7 +1028,7 @@ class emailDailyLimitChecker{
 }
 
 function getRandomInteger(min, max){
-    return Math.floor(Math.random() * Math.floor(max)) + (min-1);
+    return Math.floor(Math.random() * Math.floor(max)) + min;
 }
 
 
