@@ -29,6 +29,7 @@
 
 #### 📙 Add an account
 [Click me](https://imgur.com/a/0icXBtI)  to get all the pictures 🖼
+Video tutorial : https://drive.google.com/file/d/1mn6Hq_tON6ek0u36bWtq0IhOEO6Hfw3v/view?usp=sharing
 - First step : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"  
 - Select your project , go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.  
