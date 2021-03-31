@@ -369,12 +369,12 @@ var html = `
                 </div>
                 <div class="form-group">
                     <select id="channel" style="height: 27px;"  type="text" list="chlist" class="dropdownlist">
-                        <option value="0" selected></option>
+                        <option value="0" selected>Random</option>
 <!--                        Name it as you want-->
                         <option value="1">01 - Choice 1</option>
                         <option value="2">02 - Choice 2</option>
                         <option value="3">03 - Choice 3</option>
-                        <option value="4">04 - Choice 4e</option>
+                        <option value="4" disabled>04 - Choice 4</option>
                     </select>
                 </div>
                 <div class="form-group">
