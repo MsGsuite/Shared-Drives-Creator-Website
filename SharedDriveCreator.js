@@ -3,12 +3,12 @@ version: "2.0",
 dailyLimit: true, // Whether to limit each mailbox to submit requests only once a day
 client_id: '', // Google Client ID
 client_secret: '', // Google Client Secret
-refresh_token: '', // Refresh token
 domain: "! ", //College name to display
 black_list: [""]
 };
 var gd;
 var today;
+
 authConfig.domainCount = 4;  //Remplace 4 by the number of different drives you have 
 
 // Create an account at https://dashboard.hcaptcha.com/signup and fulfill all details
@@ -16,7 +16,6 @@ var hCaptchaConfig = {
     secret: '',
     sitekey: ''
 };
-
 
 var html = `
 <!DOCTYPE html>
@@ -298,12 +297,8 @@ var html = `
         /*End Button accept the terms*/
         /*----------------------------------------------------
         ----------------------------------------------------*/
-
     </style>
-
 </head>
-
-
 <body>
 <header>
     <div class="popupwindows">
@@ -331,8 +326,6 @@ var html = `
         <div class="btncreate">
             <button type="submit" class="btn btn-outline-light btn-sm btn-lg round closepopup">I accept the terms</button>
         </div>
-
-
         <script>
             let modalBtns = [...document.querySelectorAll(".button")];
             modalBtns.forEach(function(btn) {
@@ -355,12 +348,8 @@ var html = `
                 }
             }
         </script>
-
-
     </div>
-
     <div class="mainbox">
-
         <div class="info-form">
             <form id="teamDriveForm">
                 <h1><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Google Logo" style="width:50px;height:50px;"></h1>
@@ -428,12 +417,7 @@ var html = `
             </form>
         </div>
     </div>
-
-
 </header>
-
-
-
                     <div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
@@ -607,29 +591,17 @@ async function handleRequest(request) {
            }
            if (requestBody.channel == 2) {
                console.log(234);
-               authConfig.client_id =
-                   "CLIENT ID";
-               authConfig.client_secret = "CLIENT SECRET";
-               authConfig.refresh_token =
-                   "REFRESH TOKEN";
+               authConfig.refresh_token = "REFRESH TOKEN";
                authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
            }
            if (requestBody.channel == 3) {
                console.log(234);
-               authConfig.client_id =
-                   "CLIENT ID";
-               authConfig.client_secret = "CLIENT SECRET";
-               authConfig.refresh_token =
-                   "REFRESH TOKEN";
+               authConfig.refresh_token = "REFRESH TOKEN";
                authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
            }
            if (requestBody.channel == 4) {
                console.log(234);
-               authConfig.client_id =
-                   "CLIENT ID";
-               authConfig.client_secret = "CLIENT SECRET";
-               authConfig.refresh_token =
-                   "REFRESH TOKEN";
+               authConfig.refresh_token = "REFRESH TOKEN";
                authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
            }
         if (authConfig.dailyLimit) {
