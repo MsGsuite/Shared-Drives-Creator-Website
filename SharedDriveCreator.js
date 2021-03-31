@@ -570,7 +570,6 @@ async function handleRequest(request) {
             }else{
                 //hCaptcha Verification
                 let hc = new hCaptcha(hCaptchaConfig.secret, hCaptchaConfig.sitekey);
-
                 let verificationResponse = await hc.verify(requestBody.recaptcha);
                 if(!verificationResponse.success){
                 	return new Response("Captcha verification: " + verificationResponse["error-codes"] + "\n", {
@@ -585,8 +584,7 @@ async function handleRequest(request) {
            if (requestBody.channel == 1) {
                console.log(234);
                //The client secret and the refresh token used here are the one set in the beginning of the file
-               authConfig.refresh_token =
-                   "REFRESH TOKEN";
+               authConfig.refresh_token = "REFRESH TOKEN";
                authConfig.domain = "NAME OF THE DOMAIN (it can be empty)";
            }
            if (requestBody.channel == 2) {
