@@ -7,6 +7,7 @@
 
 <br />
 
+## New tutorial here : https://telegra.ph/Google-Shared-Drives-Creator-Website-03-31 (I will update the github one later)
 
 ## 📜 Features
 - 🔭 Create Shared Drive from your google account without using it
