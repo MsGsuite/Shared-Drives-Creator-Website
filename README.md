@@ -32,31 +32,43 @@
 #### 📙 Add one account
 [🎬 Click me](https://drive.google.com/file/d/1mn6Hq_tON6ek0u36bWtq0IhOEO6Hfw3v)  to see the video tutorial
 
+<br/>
+
 - First step : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
 > ⏣ The steps bellow does not require any gsuite/workspace accounts. They can be done with your own account.
 
 
-- Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"  
-- Select your project , go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.  
+- Go to the [google cloud console](https://console.developers.google.com/apis/credentials) and create a project  
+- Then, enable the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive)
 - Go to the [OAuth Consent Screen](https://console.cloud.google.com/apis/credentials/consent) and select "External" and click on "Create"
-- Fulfill all required informations and click on "Save and Continue" 3 times (the "Scopes" and "Test users" parts do not require any inputs). Click on publish and validate.
-- Go the the [Credentials](https://console.cloud.google.com/apis/credentials) tab, click on "Create Credentials" then "OAuth client ID", select "Web application" and name it as you want 
+- Fulfill all required informations (the one with a red *) and click on "Save and Continue" 3 times (the "Scopes" and "Test users" parts do not require any inputs) 
+- Click on publish and validate (important)
+- On the [Credentials](https://console.cloud.google.com/apis/credentials) tab, click on "Create Credentials" then "OAuth client ID", select "Web application"
 - Under "Authorized JavaScript origins" click on "ADD URL" and add `https://developers.google.com` 
-- Under "Authorized redirect URIs" click on "ADD URL" and add `https://developers.google.com/oauthplayground` then click on "Create" 
-- Open a new tab and go to the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials" 
+- Under "Authorized redirect URIs" click on "ADD URL" and add `https://developers.google.com/oauthplayground`
+- Save and note down your Client ID and Secret
+> ⏣ From now you need to be logged with your gsuite/workspace account (how can create team drives)
+- Go to the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials" 
 - Copy-paste your client ID and client secret from the previous step and press the close button.
-- Scroll down the list on the left to "Drive API v3", select it, click on "[https://www.googleapis.com/auth/drive]" and "authorize API" 
-- Select your account and click on "Allow", then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and copy your refresh token 
-- Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 605.
+- Scroll down the list on the left to "Drive API v3", select it, click on "https://www.googleapis.com/auth/drive" and "authorize API"
+- Select your gsuite/workspace account give permissions using your google account, then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and note your refresh token.
+- Open/download the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file and put your :
+> - Client ID at line 4
+> - Client Secret at line 5
+> - Refresh token at line 587
+- Change the number at line 12 with the number of different drives you have (this number is useful for the random choice)
+- Change the name of the choices of the dropdown list by the name of your domains or whatever you want at line 374
+
 
 
 #### 🔒 HCaptcha
 - Go to https://dashboard.hcaptcha.com/signup and fulfill all required details
-- Copy your sitekey and paste it in line 17 & 392
+- Copy your sitekey and paste it in line 17
 - Go to the settings of your hCaptcha account, copy and paste your secret key to line 16
 
 
 #### ➕ Add multiple accounts
+
 - After following [this](https://github.com/MsGsuite/MsGsuite#-add-an-account) part, save your client_id and client_secret
 - Log in to your new account, go the the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials" 
 - Copy-paste your client ID and client secret created before and press the close button.
