@@ -10,13 +10,14 @@
 ## New tutorial here : https://telegra.ph/Google-Shared-Drives-Creator-Website-03-31 (I will update the github one later)
 
 ## 📜 Features
-- 🔭 Create Shared Drive from your google account without using it
-- 🛠 100% customizable 
+- 🔭 Create Shared Drive with your google account 
+- 🛠 100% customizable
 - 🖼 User-friendly UI
 - ⚙️ Add multiple accounts
-- 🔐 Protected thanks to H-captcha 
 - 📊 Add statistics
 - 🎲 Randomize choice
+- ⚠ Warning pop-up
+- 🔐 Protected thanks to H-captcha
 
 <br />
 
@@ -24,15 +25,17 @@
 
 ## 📚 How to add an account
 #### ⚠️ Warnings
- - This is illegal to use hacked account! Add only the accounts you own.
+ - This is illegal to use hacked/cracked accounts! Add only the accounts you own.
  - You MUST have the right the create team drive into your account else it won't work.
  - I am not responsible of any google restrictions into your account or the subscription (the account may be suspended by google due to abuse)
 
 #### 📙 Add one account
-[Click me](https://imgur.com/a/0icXBtI)  to get all the pictures 🖼
+[🎬 Click me](https://drive.google.com/file/d/1mn6Hq_tON6ek0u36bWtq0IhOEO6Hfw3v)  to see the video tutorial
 
-Video tutorial : https://drive.google.com/file/d/1mn6Hq_tON6ek0u36bWtq0IhOEO6Hfw3v/view?usp=sharing
 - First step : read the [⚠️ warnings](https://github.com/MsGsuite/MsGsuite#%EF%B8%8F-warnings)
+> ⏣ The steps bellow does not require any gsuite/workspace accounts. They can be done with your own account.
+
+
 - Then go to the [google cloud console](https://console.developers.google.com/apis/credentials), click on "CREATE PROJECT", name it as you want and click on "Create"  
 - Select your project , go to the [google drive api](https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive) page and enable it.  
 - Go to the [OAuth Consent Screen](https://console.cloud.google.com/apis/credentials/consent) and select "External" and click on "Create"
