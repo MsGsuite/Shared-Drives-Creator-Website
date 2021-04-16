@@ -53,7 +53,7 @@
 - Scroll down the list on the left to "Drive API v3", select it, click on "https://www.googleapis.com/auth/drive" and "authorize API"
 - Select your gsuite/workspace account give permissions using your google account, then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and note your refresh token.
 - Open/download the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file and put your :
-> - Client ID at line 4
+    - Client ID at line 4
 > - Client Secret at line 5
 > - Refresh token at line 587
 - Change the number at line 12 with the number of different drives you have (this number is useful for the random choice)
