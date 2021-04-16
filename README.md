@@ -54,8 +54,8 @@
 - Select your gsuite/workspace account give permissions using your google account, then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and note your refresh token.
 - Open/download the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file and put your :
     - Client ID at line 4
-> - Client Secret at line 5
-> - Refresh token at line 587
+    - Client Secret at line 5
+    - Refresh token at line 587
 - Change the number at line 12 with the number of different drives you have (this number is useful for the random choice)
 - Change the name of the choices of the dropdown list by the name of your domains or whatever you want at line 374
 
@@ -68,13 +68,16 @@
 
 
 #### ➕ Add multiple accounts
+If you want to add multiple accounts, it's possible!
 
-- After following [this](https://github.com/MsGsuite/MsGsuite#-add-an-account) part, save your client_id and client_secret
-- Log in to your new account, go the the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials" 
+- After following the [📙  Add one account](https://github.com/MsGsuite/MsGsuite#-add-an-account) part, log in to your new account, go the the [Developers Playground](https://developers.google.com/oauthplayground), click on the ⚙️ in the upper right corner and select "Use your own OAuth credentials"
 - Copy-paste your client ID and client secret created before and press the close button.
-- Scroll down the list on the left to "Drive API v3", select it, click on "[https://www.googleapis.com/auth/drive]" and "authorize API" 
-- Select your account and click on "Allow", then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and copy your refresh token 
-- Put the client secret, client id into the [SharedDriveCreator.js](https://github.com/MsGsuite/MsGsuite/blob/main/SharedDriveCreator.js) file. The refresh token goes to line 605.
+- Scroll down the list on the left to "Drive API v3", select it, click on "https://www.googleapis.com/auth/drive" and "authorize API"
+- Select your gsuite/workspace account give permissions using your google account, then "Exchange authorization code for tokens", check "Auto-refresh the token before it expires." and note your refresh token.
+- Open/download the SharedDriveCreator.js  file and put your :
+    - Refresh token at line 587
+    - Change the number at line 12 with the number of different drives you have (this number is useful for the random choice)
+    - Change the name of the choices of the dropdown list by the name of your domains or whatever you want at line 375 and following
 
 Your Client ID and Client secret won't change. Only your refresh token will be different. You can use the same client id and client secret on multiple accounts.
 <br />
