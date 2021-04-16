@@ -98,18 +98,14 @@ Your Client ID and Client secret won't change. Only your refresh token will be d
 
 
 ## 📢 Follow us:
-[<img align="left" alt="Website Logo" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
-[<img align="left" alt="Telegram Logo" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" />][telegram]
-[<img align="left" alt="Telegram Logo" width="22px" src="https://www.searchpng.com/wp-content/uploads/2019/02/Message-Chat-Icon-PNG-Image-1024x941.png" />][telegramchat]
+- Team drive generator : https://td.msgsuite.workers.dev/
+- Telegram channel : https://t.me/MsGsuite
+- Telegram chat : https://t.me/MsGsuiteChat
+
 <br />
 <!-- Optional if you have blogs -->
 ## ❤️ Credits :
 * [Parveen Bhadoo](https://github.com/ParveenBhadooOfficial/Create-Google-Shared-Drive)
 * The admin of [lvyelanshan](https://t.me/lvyelanshan_share)
 * Albert Einstein for the hCaptcha verification
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
-<!-- This section you create this variables that are used above -->
-[website]: https://td.msgsuite.workers.dev
-[telegram]: https://t.me/MsGsuite
-[telegramchat]: https://t.me/MsGsuiteChat
+
