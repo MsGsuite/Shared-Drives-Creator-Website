@@ -103,7 +103,7 @@ Your Client ID and Client secret won't change. Only your refresh token will be d
 - Telegram chat : https://t.me/MsGsuiteChat
 
 <br />
-<!-- Optional if you have blogs -->
+
 ## ❤️ Credits :
 * [Parveen Bhadoo](https://github.com/ParveenBhadooOfficial/Create-Google-Shared-Drive)
 * The admin of [lvyelanshan](https://t.me/lvyelanshan_share)
