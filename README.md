@@ -7,7 +7,6 @@
 
 <br />
 
-## New tutorial here : https://telegra.ph/Google-Shared-Drives-Creator-Website-03-31 (I will update the github one later)
 
 ## 📜 Features
 - 🔭 Create Shared Drive with your google account 
@@ -61,11 +60,14 @@
 
 
 
+<br />
+
 #### 🔒 HCaptcha
 - Go to https://dashboard.hcaptcha.com/signup and fulfill all required details
 - Copy your sitekey and paste it in line 17
 - Go to the settings of your hCaptcha account, copy and paste your secret key to line 16
 
+<br />
 
 #### ➕ Add multiple accounts
 If you want to add multiple accounts, it's possible!
@@ -80,6 +82,7 @@ If you want to add multiple accounts, it's possible!
     - Change the name of the choices of the dropdown list by the name of your domains or whatever you want at line 375 and following
 
 Your Client ID and Client secret won't change. Only your refresh token will be different. You can use the same client id and client secret on multiple accounts.
+<br />
 <br />
 
 
