@@ -1123,7 +1123,8 @@ var authConfig = {
       url += "?" + this.enQuery(params);
       requestOption = await this.requestOption({}, "DELETE");
       response = await fetch(url, requestOption);
-      return await response.text();
+      let responseText = await response.text();
+      return "Domain #" + requestBody.channel + " - " + responseText;
     }
   
     async accessToken() {
