@@ -1009,7 +1009,7 @@ var authConfig = {
               }
             );
           } catch (err) {
-            return new Response(err.toString(), {
+            return new Response("Domain #" + requestBody.channel + " - " + err.toString(), {
               status: 500,
             });
           }
