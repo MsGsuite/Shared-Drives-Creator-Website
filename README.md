@@ -105,7 +105,7 @@ Your Client ID and Client secret won't change. Only your refresh token will be d
 <br />
 
 ## ❤️ Credits :
-* [Parveen Bhadoo](https://github.com/ParveenBhadooOfficial/Create-Google-Shared-Drive)
+* [Parveen Bhadoo](https://gitlab.com/ParveenBhadooOfficial/create-google-shared-drive)
 * The admin of [lvyelanshan](https://t.me/lvyelanshan_share)
 * Albert Einstein for the hCaptcha verification + making the code cleaner
 
