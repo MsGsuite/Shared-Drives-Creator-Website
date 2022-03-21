@@ -2,7 +2,7 @@
 
 <br />
 
-<!-- > ## A simple script to automate the google Shared Drives creation. -->
+<!-- > ## A simple script to automate the Google Shared Drives creation. -->
 [![Create-Google-Shared-Drive](https://i.imgur.com/GB6clwg.png)](https://github.com/MsGsuite/MsGsuite)
 
 <br />
