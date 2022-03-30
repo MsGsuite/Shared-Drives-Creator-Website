@@ -98,7 +98,7 @@ Your Client ID and Client secret won't change. Only your refresh token will be d
 
 
 ## 📢 Follow us:
-- Team drive generator : https://td.msgsuite.workers.dev/
+- Team drive generator : https://msgsuite.eu.org/
 - Telegram channel : https://t.me/MsGsuite
 - Telegram chat : https://t.me/MsGsuiteChat
 
